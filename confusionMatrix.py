@@ -1,3 +1,4 @@
+import numpy as np
 
 class confusionMatrix(object):
 	
@@ -5,8 +6,9 @@ class confusionMatrix(object):
 
 		matrix = []
 		unclassified = 0
+		
 		for i in range(len(classNames)):
-			matrix.append([0, 0, 0])
+			matrix.append(np.zeros(len(classNames),dtype=np.int32).tolist())
 
 		for x in range(len(output)):
 			
